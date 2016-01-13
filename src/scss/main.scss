@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+$mainFont: "Roboto", sans-serif;
+
 body {
-	font-family: sans-serif;
+	font-family: $mainFont;
 }
 
 * {
