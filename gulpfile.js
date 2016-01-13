@@ -7,6 +7,8 @@ const glob = require('glob');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
 
 const connect = require('gulp-connect');
 
@@ -20,7 +22,8 @@ var config = {
 		js: './src/**/*.js',
 		scss: './src/**/*.scss',
 		dist: './dist',
-		mainJs: './src/app/main.js'
+		mainJs: './src/app/main.js',
+		images: './src/public/img/**/*'
 	}
 };
 
@@ -73,10 +76,17 @@ gulp.task('scss', function() {
 		.pipe(gulp.dest('dist'))
 });
 
+gulp.task('images', function() {
+	return gulp.src('src/public/img/**/*')
+		.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+		.pipe(gulp.dest('dist/public/img'));
+});
+
 gulp.task('watch', function () {
 	gulp.watch(config.paths.html, ['html']);
 	gulp.watch(config.paths.js, ['js']);
 	gulp.watch(config.paths.scss, ['scss']);
+	gulp.watch(config.paths.images, ['images']);
 });
 
-gulp.task('default', ['html', 'js', 'scss', 'connect', 'watch']);
+gulp.task('default', ['html', 'js', 'scss', 'images', 'connect', 'watch']);
