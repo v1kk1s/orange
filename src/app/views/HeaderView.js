@@ -8,7 +8,7 @@ export default class HeaderView {
 
 		this.content = `
 			<header id="header">
-				I R Header!
+
 			</header>
 		`;
 

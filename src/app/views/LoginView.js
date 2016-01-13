@@ -8,7 +8,7 @@ export default class LoginView {
 
     this.content = `
 			<div class="login" id="loginPage">
-				I R login!
+
 			</div>
 		`;
 
