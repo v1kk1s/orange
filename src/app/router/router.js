@@ -1,5 +1,5 @@
 import Header from '../controllers/HeaderController';
-import Messages from '../controllers/MessagesController';
+import Login from '../controllers/LoginController';
 
 export default class Router {
 	constructor (container) {
@@ -14,14 +14,8 @@ export default class Router {
 	render () {
 		new Header(this.container);
 
-		this.content = document.createElement('div');
-		this.content.id = 'app-content';
-		this.container.appendChild(this.content);
+		new Login(this.container);
 
-		this.content.innerHTML = `
-			<p>
-				I R Router Content!
-			</p>
-		`;
+
 	}
 }
