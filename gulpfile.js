@@ -69,7 +69,9 @@ function rebundle(b) {
 gulp.task('scss', function() {
 	gulp.src('src/scss/**/*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass()
+		.pipe(sass({
+			includePaths: require('node-bourbon').includePaths
+		})
 			.on('error', sass.logError))
 		.pipe(concat('style.css'))
 		.pipe(sourcemaps.write())

@@ -4,4 +4,14 @@
   background: url('/public/img/login-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+
+  &-logo {
+    width: 245px;
+    height: 270px;
+    display: block;
+    margin: auto;
+    background: url('/public/img/logo-login.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
