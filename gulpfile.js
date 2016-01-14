@@ -9,6 +9,7 @@ const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
+const flatten = require('gulp-flatten');
 
 const connect = require('gulp-connect');
 
@@ -84,6 +85,12 @@ gulp.task('images', function() {
 		.pipe(gulp.dest('dist/public/img'));
 });
 
+gulp.task('fonts', function() {
+	return gulp.src('src/public/fonts/**/*')
+		.pipe(flatten())
+		.pipe(gulp.dest('dist/public/fonts'))
+});
+
 gulp.task('watch', function () {
 	gulp.watch(config.paths.html, ['html']);
 	gulp.watch(config.paths.js, ['js']);
@@ -91,4 +98,4 @@ gulp.task('watch', function () {
 	gulp.watch(config.paths.images, ['images']);
 });
 
-gulp.task('default', ['html', 'js', 'scss', 'images', 'connect', 'watch']);
+gulp.task('default', ['html', 'js', 'scss', 'images', 'connect', 'watch', 'fonts']);

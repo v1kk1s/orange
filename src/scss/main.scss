@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 @import "bourbon";
-$mainFont: "Roboto", sans-serif;
+
+@include font-face("hlvtc-medium", " /public/fonts/HelveticaNeueCyrLight", $file-formats: svg ttf woff eot woff2);
+@import "variables.scss";
 
 body {
-	font-family: $mainFont;
+	font-family: $roboto;
 	@include position(relative);
 }
 

@@ -8,9 +8,16 @@ export default class LoginView {
 
     this.content = `
 			<div class="login" id="loginPage">
-        <a href="#" class="login-logo">
+        <a href="#" class="login-logo"></a>
 
-        </a>
+        <div class="login-form-wrap">
+          <h1>Welcome to orange chat</h1>
+
+          <form action="#">
+            <input type="text" class="login-username" placeholder="Username"/>
+            <input type="password" class="login-password" placeholder="Password"/>
+          </form>
+        </div>
 			</div>
 		`;
 
