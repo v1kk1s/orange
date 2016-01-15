@@ -4,6 +4,7 @@ $mainFont: 'Roboto', sans-serif;
 @import "bourbon";
 
 @include font-face("hlvtc-medium", " /public/fonts/HelveticaNeueCyrLight", $file-formats: svg ttf woff eot woff2);
+@include font-face("hlvtc-bold", " /public/fonts/HelveticaNeueCyrBold", $file-formats: svg ttf woff eot woff2);
 @import "variables.scss";
 
 body {
@@ -17,7 +18,23 @@ body {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
+a, input {
+	&:focus {
+		outline: none;
+	}
+}
+
+.vert-align {
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+	display: block;
+}
+
 #app {
-	width: 750px;
-	height: 1334px;
+
 }

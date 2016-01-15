@@ -12,10 +12,7 @@ export default class Router {
 	}
 
 	render () {
-		new Header(this.container);
-
+		//new Header(this.container);
 		new Login(this.container);
-
-
 	}
 }
