@@ -1,5 +1,109 @@
-#header {
-  position: absolute;
-  top: 0;
-  left: 0;
+@import "bourbon";
+@import "../variables.scss";
+
+.header {
+  @include size(100% 120px);
+  position: relative;
+  background: $orange;
+  color: white;
+  @include padding(45px 25px 10px 30px);
+
+  @include align-items(center);
+  @include align-content(center);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include flex-wrap(nowrap);
+
+  &-title {
+    font-size: 34px;
+    font-family: $h-bold;
+    @include margin(null null -10px -10px);
+  }
+
+  &-search {
+    height: 50px;
+    &-icon {
+      border: transparent;
+      @include size(50px);
+      background: url('/public/img/search-icon.png') no-repeat;
+      background-position: center center;
+      opacity: 1;
+      @include transition(opacity 0.2s $ease-in-cubic);
+      &:hover, &:focus {
+        opacity: 0.4;
+      }
+    }
+    &-field {
+      border-top: transparent;
+      border-left: transparent;
+      border-right: transparent;
+      border-bottom: 3px solid rgba(255, 255, 255, 1);
+      width: 95%;
+      height: 50px;
+      background-color: $orange;
+      font-family: $h-medium;
+      color: white;
+      font-size: 25px;
+      @include  placeholder {
+        font-family: $h-medium;
+        color: white;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  &-field-wrap {
+    left: 0;
+    top: 118px;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    padding: 5px;
+    background-color: $orange;
+    text-align: center;
+    visibility: hidden;
+  }
+
+  &-menu-wrap {
+    .nav-icon {
+      @include size(55px);
+    }
+
+    .nav-icon:after,
+    .nav-icon:before,
+    .nav-icon div {
+      background-color: #fff;
+      -o-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      content: '';
+      display: block;
+      height: 4px;
+      margin: 15px 0;
+      -moz-transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+    }
+
+    .nav-icon:hover:before {
+      transform: translateY(25px) rotate(135deg);
+      -moz-transform: translateY(25px) rotate(135deg);
+      -webkit-transform: translateY(25px) rotate(135deg);
+    }
+
+    .nav-icon:hover:after {
+      transform: translateY(-12px) rotate(-135deg);
+      -moz-transform: translateY(-12px) rotate(-135deg);
+      -webkit-transform: translateY(-12px) rotate(-135deg);
+    }
+
+    .nav-icon:hover div {
+      -moz-transform: scale(0);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  }
 }

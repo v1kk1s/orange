@@ -17,7 +17,7 @@ export default class Router {
 		//new Login(this.container);
 
 		//recent page
-		//new Header(this.container);
+		new Header(this.container);
 		new Recent(this.container);
 	}
 }
