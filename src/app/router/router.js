@@ -1,5 +1,6 @@
 import Header from '../controllers/HeaderController';
 import Login from '../controllers/LoginController';
+import Recent from '../controllers/RecentController';
 
 export default class Router {
 	constructor (container) {
@@ -12,7 +13,11 @@ export default class Router {
 	}
 
 	render () {
+		// login page
+		//new Login(this.container);
+
+		//recent page
 		//new Header(this.container);
-		new Login(this.container);
+		new Recent(this.container);
 	}
 }
