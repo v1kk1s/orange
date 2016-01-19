@@ -1,0 +1,71 @@
+@import "bourbon";
+@import "../variables.scss";
+
+.recent {
+  padding: 0 2%;
+
+  &-contact-entry-wrap {
+    position: relative;
+  }
+
+  &-contact {
+    border-bottom: 1px solid $gray;
+    @include padding(41px 3.5%);
+
+    @include align-items(center);
+    @include align-content(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    @include flex-wrap(nowrap);
+
+    &-caption {
+      margin-left: 4%;
+      margin-top: 10px
+    }
+    &-logo {
+      @include size(100px);
+    }
+    &-name {
+      color: $dark;
+      font-size: 33px;
+      font-family: $h-bold;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+    &-last-seen {
+      color: $gray3;
+      font-size: 21px;
+      font-family: $h-medium;
+      letter-spacing: 0.7px;
+    }
+  }
+
+  &-delete-contact {
+    visibility: hidden;
+    width: 214px;
+    height: 180px;
+    position: absolute;
+    right: -2.1%;
+    top: 0;
+    background: $red;
+    @include align-items(center);
+    @include align-content(center);
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include flex-wrap(nowrap);
+    &-icon {
+      @include size(64px 65px);
+      background: url("../public/img/delete-contact-icon.png") no-repeat;
+      background-position: center center;
+    }
+    &-text {
+      color: white;
+      font-size: 22px;
+      margin-top: 20px;
+      font-family: $h-medium;
+      letter-spacing: 1px;
+    }
+  }
+}

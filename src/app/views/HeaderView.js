@@ -9,17 +9,19 @@ export default class HeaderView {
 		this.content = `
 			<header class="header">
 
-				<div class="header-menu-wrap">
-					<div class="nav-icon"> <div></div> </div>
-				</div>
-
-				<div class="header-title"> Recent </div>
-
-				<form action="#" class="header-search">
-					<div class="header-field-wrap">
-						<input type="search" class="header-search-field" placeholder="Search"/>
+				<div class="header-top-wrap">
+					<div class="header-menu-wrap">
+						<div class="nav-icon"> <div></div> </div>
 					</div>
-					<input type="submit" class="header-search-icon" value=""/>
+
+					<div class="header-title"> Recent </div>
+
+					<a href="#" type="submit" class="header-search-icon" id="header-search-icon"></a>
+				</div>
+				<form action="#" class="header-search">
+
+						<input type="search" class="header-search-field" placeholder="Search"/>
+
 				</form>
 			</header>
 		`;
