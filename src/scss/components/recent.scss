@@ -2,7 +2,7 @@
 @import "../variables.scss";
 
 .recent {
-  padding: 0 2%;
+  overflow: hidden;
 
   &-contact-entry-wrap {
     position: relative;
@@ -10,7 +10,7 @@
 
   &-contact {
     border-bottom: 1px solid $gray;
-    @include padding(41px 3.5%);
+    @include padding(41px 5.5%);
 
     @include align-items(center);
     @include align-content(stretch);
@@ -21,9 +21,11 @@
 
     &-caption {
       margin-left: 4%;
-      margin-top: 10px
+      margin-top: 10px;
+      @include transition( translateX 3s);
     }
     &-logo {
+      @include transition(opacity 0.3s $ease-in-out-quad, transform 0.3s $ease-in-out-quad);
       @include size(100px);
     }
     &-name {
@@ -42,11 +44,10 @@
   }
 
   &-delete-contact {
-    visibility: hidden;
     width: 214px;
     height: 180px;
     position: absolute;
-    right: -2.1%;
+    right: -214px;
     top: 0;
     background: $red;
     @include align-items(center);
@@ -55,6 +56,7 @@
     @include flex-direction(column);
     @include justify-content(center);
     @include flex-wrap(nowrap);
+    @include transition(right 0.3s $ease-in-out-quad);
     &-icon {
       @include size(64px 65px);
       background: url("../public/img/delete-contact-icon.png") no-repeat;
@@ -66,6 +68,21 @@
       margin-top: 20px;
       font-family: $h-medium;
       letter-spacing: 1px;
+    }
+  }
+
+  .delete {
+    .recent {
+      &-contact-logo {
+        opacity: 0;
+        @include transform(translateX(-100px));
+      }
+      &-contact-caption {
+        @include transform(translateX(-130px))
+      }
+      &-delete-contact {
+        right: 0;
+      }
     }
   }
 }

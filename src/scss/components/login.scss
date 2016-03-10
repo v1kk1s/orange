@@ -32,8 +32,8 @@
     margin-top: 6vh;
     text-align: center;
     form {
-      width: 605px;
-      @include margin(40px null -65px 5px);
+      width: 80%;
+      @include margin(80px auto 0);
     }
     input {
       border: transparent;

@@ -35,3 +35,7 @@ a, input {
 	@include transform(translateY(-50%));
 	display: block;
 }
+
+.app {
+	min-width: 400px;
+}
