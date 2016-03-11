@@ -1,18 +1,71 @@
 @import "bourbon";
 @import "../variables.scss";
+@import "../sprite";
 
 .menu {
-  width: 500px;
+  width: 530px;
   height: 100%;
-  background-color: #009926;
+  background-color: $orange;
   position: absolute;
+  top: 0;
   z-index: 3;
-  @include transform(translateX(-500px));
+  color: white;
+  @include transform(translateX(-530px));
   -webkit-transition:transform 0.3s $ease-in-out-quad;
   -moz-transition:transform 0.3s $ease-in-out-quad;
   -ms-transition:transform 0.3s $ease-in-out-quad;
   -o-transition:transform 0.3s $ease-in-out-quad;
   transition:transform 0.3s $ease-in-out-quad;
+
+  &-avatar-wrap {
+    width: 100%;
+    height: 380px;
+    background: url("../public/img/menu-bg.jpg") no-repeat;
+    background-size: cover;
+
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(space-around);
+    @include align-items(center);
+  }
+  
+  &-avatar {
+    position: relative;
+    @include size(210px);
+    border-radius: 50%;
+    background: url("../public/img/menu-avatar.png") no-repeat;
+    background-size: cover;
+    &-before {
+      content: '';
+      display: block;
+      @include size(220px);
+      border-radius: 50%;
+      background-color: white;
+      @include position(absolute, -5px null null -5px);
+    }
+  }
+
+  &-name {
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-family: hlvtc-medium,"Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  &-item {
+    a {
+      display: inline-block;
+      margin: 10px;
+      line-height: 40px;
+      vertical-align: baseline;
+      &:before {
+        content: '';
+       // @include sprite($recent);
+        display: inline-block;
+      }
+    }
+  }
 
   &-open {
     @include transform(translateX(0));

@@ -10,6 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const flatten = require('gulp-flatten');
+const spritesmith = require('gulp.spritesmith');
 
 const connect = require('gulp-connect');
 
@@ -83,6 +84,18 @@ gulp.task('images', function() {
 	return gulp.src('src/public/img/**/*')
 		.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
 		.pipe(gulp.dest('dist/public/img'));
+});
+
+gulp.task('sprite', function() {
+	var spriteData =
+		gulp.src('src/public/img/sprites/*.*')
+			.pipe(spritesmith({
+				imgName: 'sprite.png',
+				cssName: 'sprite.scss'
+			}));
+
+	spriteData.img.pipe(gulp.dest('src/public/img/'));
+	spriteData.css.pipe(gulp.dest('src/scss/'));
 });
 
 gulp.task('fonts', function() {

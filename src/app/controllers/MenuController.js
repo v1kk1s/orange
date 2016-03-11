@@ -19,6 +19,7 @@ export default class HeaderController {
 
   startSwipe(e) {
     this.startX = e.originalEvent.touches[0].pageX;
+    console.log(111);
   }
 
   endSwipe(e) {
