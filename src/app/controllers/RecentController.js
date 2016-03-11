@@ -23,7 +23,7 @@ export default class RecentController {
     this.startX = e.originalEvent.touches[0].pageX;
   }
 
-  endSwipe(e) {
+  endSwipe() {
     if (this.startX > this.endX)
     $(this).toggleClass('delete');
     //console.log('>>>',  this.startX,   '>>>',  this.endX);
