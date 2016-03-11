@@ -11,6 +11,7 @@ export default class HeaderController {
 
 	initEvents() {
 		$('#header-search-icon').on('click', this.toggleSearch);
+		$('.nav-icon').on('click', this.openMenu);
 	}
 
 	toggleSearch () {
@@ -18,6 +19,10 @@ export default class HeaderController {
 		setTimeout(() => {
 			$('.header-search-field').slideToggle(200);
 		}, 100);
+	}
+
+	openMenu() {
+		$('.menu').toggleClass('menu-open');
 	}
 
 	render () {
