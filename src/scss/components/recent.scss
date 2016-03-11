@@ -20,12 +20,12 @@
     @include flex-wrap(nowrap);
 
     &-caption {
-      margin-left: 4%;
       margin-top: 10px;
-      @include transition( translateX 3s);
+      @include transform(translateX(10%));
+      @include transition( transform 3s $ease-in-out-quad);
     }
     &-logo {
-      @include transition(opacity 0.3s $ease-in-out-quad, transform 0.3s $ease-in-out-quad);
+      @include transition(opacity 0.2s $ease-in-out-quad);
       @include size(100px);
     }
     &-name {
@@ -75,10 +75,9 @@
     .recent {
       &-contact-logo {
         opacity: 0;
-        @include transform(translateX(-100px));
       }
       &-contact-caption {
-        @include transform(translateX(-130px))
+        @include transform(translateX(-100px));
       }
       &-delete-contact {
         right: 0;
