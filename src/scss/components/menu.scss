@@ -5,4 +5,16 @@
   width: 500px;
   height: 100%;
   background-color: #009926;
+  position: absolute;
+  z-index: 3;
+  @include transform(translateX(-500px));
+  -webkit-transition:transform 0.3s $ease-in-out-quad;
+  -moz-transition:transform 0.3s $ease-in-out-quad;
+  -ms-transition:transform 0.3s $ease-in-out-quad;
+  -o-transition:transform 0.3s $ease-in-out-quad;
+  transition:transform 0.3s $ease-in-out-quad;
+
+  &-open {
+    @include transform(translateX(0));
+  }
 }

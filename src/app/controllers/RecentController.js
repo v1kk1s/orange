@@ -24,9 +24,7 @@ export default class RecentController {
   }
 
   endSwipe() {
-    if (this.startX > this.endX)
-    $(this).toggleClass('delete');
-    //console.log('>>>',  this.startX,   '>>>',  this.endX);
+    this.startX > this.endX ? $(this).addClass('delete') : $(this).removeClass('delete');
   }
 
   midSwipe(e) {
