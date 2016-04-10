@@ -73,6 +73,15 @@
     }
   }
 
+  &-logout {
+    line-height: 55px;
+    letter-spacing: -1px;
+    padding-left: 31%;
+    color: white;
+    font-size: 36px;
+    @include position(absolute, null null 110px 27px);
+  }
+
   &-recent:before {
     @include sprite($recent);
   }
@@ -89,10 +98,14 @@
       @include sprite($settings);
   }
 
+  &-logout:before {
+    content: '';
+    display: block;
+    @include position(absolute, 0 null null 56px);
+    @include sprite($log-out);
+  }
+
   &-list-wrap {
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(space-between);
     padding: 33px 15%;
   }
 

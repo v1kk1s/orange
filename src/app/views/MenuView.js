@@ -25,6 +25,8 @@ export default class MenuView {
               return(`<li class="menu-list-item"><a href=${item.link} class=${item.iconClass}>${item.title}</a></li>`)
             }).join('')}
           </ul>
+
+          <div class="menu-logout">Log out</div>
         </div>
 
 			</div>
