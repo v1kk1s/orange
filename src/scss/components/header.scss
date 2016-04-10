@@ -6,7 +6,7 @@
   position: relative;
   background: $orange;
   color: white;
-  @include padding(41px 25px 10px 30px);
+  @include padding(41px 3px 7px 30px);
 
   &-top-wrap {
     @include align-items(center);
@@ -20,7 +20,8 @@
   &-title {
     font-size: 34px;
     font-family: $h-bold;
-    @include margin(null null -10px -10px);
+    letter-spacing: 0.5px;
+    @include margin(null null -10px -7px);
   }
 
   &-search {
@@ -80,29 +81,11 @@
       border-radius: 2px;
       content: '';
       display: block;
-      height: 4px;
-      margin: 15px 0;
+      height: 2px;
+      margin: 18px 0;
       -moz-transition: all .2s ease-in-out;
       -webkit-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out;
-    }
-
-    .nav-icon:hover:before {
-      transform: translateY(25px) rotate(135deg);
-      -moz-transform: translateY(25px) rotate(135deg);
-      -webkit-transform: translateY(25px) rotate(135deg);
-    }
-
-    .nav-icon:hover:after {
-      transform: translateY(-12px) rotate(-135deg);
-      -moz-transform: translateY(-12px) rotate(-135deg);
-      -webkit-transform: translateY(-12px) rotate(-135deg);
-    }
-
-    .nav-icon:hover div {
-      -moz-transform: scale(0);
-      -webkit-transform: scale(0);
-      transform: scale(0);
     }
   }
 }

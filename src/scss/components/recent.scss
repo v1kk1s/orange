@@ -10,7 +10,7 @@
 
   &-contact {
     border-bottom: 1px solid $gray;
-    @include padding(41px 5.5%);
+    @include padding(40px 5.5%);
 
     @include align-items(center);
     @include align-content(stretch);
@@ -20,7 +20,7 @@
     @include flex-wrap(nowrap);
 
     &-caption {
-      margin-top: 10px;
+      margin-top: 7px;
       @include transform(translateX(10%));
       @include transition( transform 3s $ease-in-out-quad);
     }
@@ -33,7 +33,7 @@
       font-size: 33px;
       font-family: $h-bold;
       letter-spacing: -0.4px;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
     &-last-seen {
       color: $gray3;
@@ -44,7 +44,7 @@
   }
 
   &-delete-contact {
-    width: 214px;
+    width: 197px;
     height: 180px;
     position: absolute;
     right: -214px;

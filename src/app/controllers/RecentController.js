@@ -20,7 +20,7 @@ export default class RecentController {
   }
 
   startSwipe(e) {
-    this.startX = e.originalEvent.touches[0].pageX;
+    this.startX = e.originalEvent.touches[0].pageX;z
   }
 
   endSwipe() {
