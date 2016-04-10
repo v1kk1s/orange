@@ -31,7 +31,7 @@
   
   &-avatar {
     position: relative;
-    @include size(210px);
+    @include size(220px);
     border-radius: 50%;
     background: url("../public/img/menu-avatar.png") no-repeat;
     background-size: cover;
@@ -49,22 +49,51 @@
     margin-top: 20px;
     font-size: 30px;
     text-align: center;
-    font-weight: 600;
-    font-family: hlvtc-medium,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -1px;
+    font-family: $h-bold;
   }
 
-  &-item {
+  &-list-item {
+    position: relative;
+    margin-bottom: 49px;
+    line-height: 55px;
+    letter-spacing: -1px;
+    list-style: none;
     a {
-      display: inline-block;
-      margin: 10px;
-      line-height: 40px;
+      display: block;
+      padding-left: 31%;
+      color: white;
+      font-size: 36px;
       vertical-align: baseline;
       &:before {
         content: '';
-       // @include sprite($recent);
-        display: inline-block;
+        display: block;
+        @include position(absolute, 0 null null 0);
       }
     }
+  }
+
+  &-recent:before {
+    @include sprite($recent);
+  }
+
+  &-groups:before {
+      @include sprite($groups);
+  }
+
+  &-contacts:before {
+      @include sprite($contacts);
+  }
+
+  &-settings:before {
+      @include sprite($settings);
+  }
+
+  &-list-wrap {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    padding: 33px 15%;
   }
 
   &-open {
