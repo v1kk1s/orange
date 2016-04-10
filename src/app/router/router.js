@@ -15,11 +15,11 @@ export default class Router {
 
 	render () {
 		// login page
-		//new Login(this.container);
+		new Login(this.container);
 
 		//recent page
-		new Menu(this.container);
-		new Header(this.container);
-		new Recent(this.container);
+		//new Menu(this.container);
+		//new Header(this.container);
+		//new Recent(this.container);
 	}
 }
