@@ -6,6 +6,7 @@
 
   &-create {
     padding: 15px 0 0 39px;
+    margin-bottom: 50px;
   }
 
   &-info-wrap {
@@ -68,5 +69,37 @@
     font-size: 22px;
     font-weight: 500;
     word-spacing: 6.4px;
+  }
+
+  &-contacts-list {
+    padding-left: 42px;
+  }
+
+  &-contact {
+    position: relative;
+    height: 180px;
+    width: 100%;
+  }
+
+  &-membership-indicator {
+    margin: auto;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid $gray2;
+    @include size(34px);
+    @include position(absolute, 0 null 0 null);
+    &.is-member {
+      border: none;
+      background-color: $green2;
+    }
+  }
+
+  &-contact-info {
+    margin-left: 80px;
+    border-bottom: 1px solid $gray2;
+    @include size(100%);
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items(center);
   }
 }

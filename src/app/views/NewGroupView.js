@@ -32,6 +32,19 @@ export default class NewGroupView {
             </div>
           </div>
 
+          <div class="new-group-contacts-list">
+
+            <div class="new-group-contact">
+              <div class="new-group-membership-indicator"></div>
+              <div class="new-group-contact-info">
+                <div class="recent-contact-logo">
+                  <img src="public/img/contact1.png" alt="profile icon"/>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 			</div>
 		`;

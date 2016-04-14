@@ -77,6 +77,17 @@ $new-group-total-width: 226px;
 $new-group-total-height: 170px;
 $new-group-image: 'sprite.png';
 $new-group: (0px, 0px, 0px, 0px, 126px, 126px, 226px, 170px, 'sprite.png', 'newGroup', );
+$new-group-check-name: 'newGroupCheck';
+$new-group-check-x: 186px;
+$new-group-check-y: 40px;
+$new-group-check-offset-x: -186px;
+$new-group-check-offset-y: -40px;
+$new-group-check-width: 22px;
+$new-group-check-height: 18px;
+$new-group-check-total-width: 226px;
+$new-group-check-total-height: 170px;
+$new-group-check-image: 'sprite.png';
+$new-group-check: (186px, 40px, -186px, -40px, 22px, 18px, 226px, 170px, 'sprite.png', 'newGroupCheck', );
 $recent-name: 'recent';
 $recent-x: 120px;
 $recent-y: 126px;
@@ -102,7 +113,7 @@ $settings: (186px, 0px, -186px, 0px, 40px, 40px, 226px, 170px, 'sprite.png', 'se
 $spritesheet-width: 226px;
 $spritesheet-height: 170px;
 $spritesheet-image: 'sprite.png';
-$spritesheet-sprites: ($contacts, $favourite-icon, $friens-icon, $groups, $log-out, $new-group, $recent, $settings, );
+$spritesheet-sprites: ($contacts, $favourite-icon, $friens-icon, $groups, $log-out, $new-group, $new-group-check, $recent, $settings, );
 $spritesheet: (226px, 170px, 'sprite.png', $spritesheet-sprites, );
 
 /*
