@@ -1,7 +1,22 @@
+import GroupModel from '../models/newGroup';
+
 export default class NewGroupView {
   constructor (container) {
     this.container = container;
     this.content = null;
+    this.groupContacts = new GroupModel().contacts;
+  }
+
+  getItems(item) {
+    return `
+      <div class="new-group-contact">
+        <div class="new-group-membership-indicator ${item.isInGroup ? 'is-member' : ''}"></div>
+        <div class="new-group-contact-info ${item.online ? 'online' : ''}">
+        <img src="public/img/${item.icon}" class='new-group-contact-img' alt="profile icon"/>
+        <p class="new-group-contact-name">${item.name}</p>
+        </div>
+      </div>
+    `
   }
 
   render () {
@@ -33,16 +48,7 @@ export default class NewGroupView {
           </div>
 
           <div class="new-group-contacts-list">
-
-            <div class="new-group-contact">
-              <div class="new-group-membership-indicator"></div>
-              <div class="new-group-contact-info">
-                <div class="recent-contact-logo">
-                  <img src="public/img/contact1.png" alt="profile icon"/>
-                </div>
-              </div>
-            </div>
-
+            ${this.groupContacts.map(this.getItems.bind(this)).join('')}
           </div>
 
         </div>
