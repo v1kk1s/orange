@@ -30,7 +30,7 @@ export default class Router {
 		//new Contacts(this.container);
 
 		//new group
-		new Header(this.container);
+		//new Header(this.container);
 		new Menu(this.container);
 		new NewGroup(this.container);
 

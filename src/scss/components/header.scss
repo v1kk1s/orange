@@ -2,11 +2,11 @@
 @import "../variables.scss";
 
 .header {
-  @include size(100% null);
   position: relative;
+  padding: 53px 30px 0;
   background: $orange;
   color: white;
-  @include padding(41px 3px 7px 30px);
+  @include size(100% 120px);
 
   &-top-wrap {
     @include align-items(center);
@@ -21,7 +21,6 @@
     font-size: 34px;
     font-family: $h-bold;
     letter-spacing: 0.5px;
-    @include margin(null null -10px -7px);
   }
 
   &-search {
@@ -88,4 +87,30 @@
       transition: all .2s ease-in-out;
     }
   }
+
+  &-new-group-header-btns {
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 0.5px;
+  }
+
+  &-back {
+    position: relative;
+    padding-left: 37px;
+    &:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-left: 4px solid white;
+      border-bottom: 4px solid white;
+      transform: rotate(45deg);
+      margin-right: 0.5em;
+    }
+  }
+
 }
