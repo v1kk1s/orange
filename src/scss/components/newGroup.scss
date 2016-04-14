@@ -1,0 +1,72 @@
+@import "bourbon";
+@import "../variables.scss";
+@import "../sprite";
+
+.new-group {
+
+  &-create {
+    padding: 15px 0 0 39px;
+  }
+
+  &-info-wrap {
+    margin-left: 20px;
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+
+  &-img {
+    border-radius: 50%;
+    overflow: hidden;
+    @include size(126px);
+    @include sprite($new-group);
+  }
+
+  &-input {
+    padding-bottom: 3px;
+    color: $gray6;
+    width: 78.5%;
+    font-size: 32px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $gray2;
+    letter-spacing: 0.5px;
+    @include placeholder {
+      color: $gray2;
+    }
+  }
+
+  &-set-photo {
+    color: $orange;
+    font-size: 24px;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    margin-bottom: 22px;
+
+  }
+
+  &-instructions {
+    margin-top: 24px;
+  }
+
+  &-add-people {
+    font-size: 22px;
+    color: $gray7;
+    letter-spacing: 0.6px;
+    margin-bottom: 25px;
+  }
+
+  &-counter {
+    color: $gray3;
+    margin-left: 5px;
+  }
+
+  &-members {
+    color: $dark;
+    font-size: 22px;
+    font-weight: 500;
+    word-spacing: 6.4px;
+  }
+}

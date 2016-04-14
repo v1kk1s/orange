@@ -2,6 +2,7 @@ import Header from '../controllers/HeaderController';
 import Login from '../controllers/LoginController';
 import Recent from '../controllers/RecentController';
 import Contacts from '../controllers/ContactsController';
+import NewGroup from '../controllers/NewGroupController';
 import Menu from '../controllers/MenuController';
 
 export default class Router {
@@ -24,8 +25,14 @@ export default class Router {
 		//new Recent(this.container);
 
 		//contacts page
+		//new Header(this.container);
+		//new Menu(this.container);
+		//new Contacts(this.container);
+
+		//new group
 		new Header(this.container);
 		new Menu(this.container);
-		new Contacts(this.container);
+		new NewGroup(this.container);
+
 	}
 }
