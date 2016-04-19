@@ -9,13 +9,31 @@ export default class Router {
 	constructor (container) {
 		this.container = container;
 		this.content = null;
+		this.routes = [];
+	}
+
+	route (path, content) {
+		this.routes[path] = {content: content};
+		console.log(this.routes);
+	}
+
+	getCurrentRoute() {
+		return window.location.href.slice(21);
 	}
 
 	run () {
-		this.render();
+		let currentURL = this.getCurrentRoute();
+		this.route('/', [Login]);
+		this.route('/recent', [Menu, Header, Recent]);
+		this.render(currentURL);
 	}
 
-	render () {
+	render (currentURL) {
+		this.routes[currentURL].content.forEach((el)=> {
+			return (new el(this.container));
+		});
+
+
 		// login page
 		//new Login(this.container);
 
@@ -30,9 +48,8 @@ export default class Router {
 		//new Contacts(this.container);
 
 		//new group
-		//new Header(this.container);
-		new Menu(this.container);
-		new NewGroup(this.container);
+		//new Menu(this.container);
+		//new NewGroup(this.container);
 
 	}
 }
