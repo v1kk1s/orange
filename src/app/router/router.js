@@ -14,7 +14,6 @@ export default class Router {
 
 	route (path, content) {
 		this.routes[path] = {content: content};
-		console.log(this.routes);
 	}
 
 	getCurrentRoute() {
@@ -24,11 +23,12 @@ export default class Router {
 	run () {
 		let currentURL = this.getCurrentRoute();
 		this.route('/', [Login]);
-		this.route('/recent', [Menu, Header, Recent]);
+		this.route('/recent', [Recent]);
 		this.render(currentURL);
 	}
 
 	render (currentURL) {
+		console.log('render');
 		this.routes[currentURL].content.forEach((el)=> {
 			return (new el(this.container));
 		});
