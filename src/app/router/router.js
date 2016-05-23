@@ -22,10 +22,6 @@ export default class Router {
 
 	run () {
 		let currentURL = this.getCurrentRoute();
-		this.route('/', [Login]);
-		this.route('/recent', [Menu, Header, Recent]);
-		this.route('/contacts', [Menu, Header, Contacts]);
-		this.route('/group', [Menu, NewGroup ]);
 		this.render(currentURL);
 	}
 
@@ -39,6 +35,12 @@ export default class Router {
 	}
 
 	render (currentURL) {
+		this.route('/', [Login]);
+		this.route('/recent', [Menu, Header, Recent]);
+		this.route('/contacts', [Menu, Header, Contacts]);
+		this.route('/group', [Menu, NewGroup ]);
+
 		this.go(currentURL);
+		console.log(this.routes);
 	}
 }
