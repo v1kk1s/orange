@@ -17,39 +17,28 @@ export default class Router {
 	}
 
 	getCurrentRoute() {
-		return window.location.href.slice(21);
+		return location.pathname || '/';
 	}
 
 	run () {
 		let currentURL = this.getCurrentRoute();
 		this.route('/', [Login]);
-		this.route('/recent', [Recent]);
+		this.route('/recent', [Menu, Header, Recent]);
+		this.route('/contacts', [Menu, Header, Contacts]);
+		this.route('/group', [Menu, NewGroup ]);
 		this.render(currentURL);
 	}
 
-	render (currentURL) {
-		console.log('render');
-		this.routes[currentURL].content.forEach((el)=> {
+	go(route) {
+		this.container.innerHTML= '';
+		history.pushState({}, route, route);
+
+		this.routes[route].content.forEach( (el) => {
 			return (new el(this.container));
-		});
+		} );
+	}
 
-
-		// login page
-		//new Login(this.container);
-
-		//recent page
-		//new Menu(this.container);
-		//new Header(this.container);
-		//new Recent(this.container);
-
-		//contacts page
-		//new Header(this.container);
-		//new Menu(this.container);
-		//new Contacts(this.container);
-
-		//new group
-		//new Menu(this.container);
-		//new NewGroup(this.container);
-
+	render (currentURL) {
+		this.go(currentURL);
 	}
 }
