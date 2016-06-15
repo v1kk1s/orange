@@ -32,7 +32,7 @@ export default class RecentView {
 
   render () {
     this.content = `
-			<div class="recent">
+			<div class="recent list-page">
         ${this.recentContacts.map(this.getItems.bind(this)).join('')}
 			</div>
 		`;

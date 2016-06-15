@@ -2,12 +2,13 @@
 @import "../variables.scss";
 
 .header {
-  position: relative;
+  @include position(absolute, 0 null null 0);
   padding: 40px 30px 0;
   background: $orange;
   color: white;
   min-height: 120px;
   width: 100%;
+  z-index: 1;
 
   &-top-wrap {
     @include align-items(center);
