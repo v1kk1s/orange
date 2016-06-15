@@ -31,7 +31,6 @@ export default class ContactsView {
 			</div>
 		`;
 
-    console.log(this.contacts);
     this.container.insertAdjacentHTML('beforeend', this.content );
   }
 }

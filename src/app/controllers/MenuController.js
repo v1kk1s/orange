@@ -19,10 +19,9 @@ export default class HeaderController {
 
   startSwipe(e) {
     this.startX = e.originalEvent.touches[0].pageX;
-    console.log(111);
   }
 
-  endSwipe(e) {
+  endSwipe() {
     if (this.startX < this.endX  && this.startX < 50)
       $(this).find('.menu').toggleClass('menu-open');
 

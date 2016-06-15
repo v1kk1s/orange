@@ -41,6 +41,5 @@ export default class Router {
 		this.route('/group', [Menu, NewGroup ]);
 
 		this.go(currentURL);
-		console.log(this.routes);
 	}
 }
