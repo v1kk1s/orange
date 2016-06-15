@@ -13,7 +13,7 @@ export default class LoginController {
   }
 
   initEvents() {
-    document.getElementById('login-submit').addEventListener('click', this.validateLogin.bind(this));
+    document.getElementById('loginSubmit').addEventListener('click', this.validateLogin.bind(this));
   }
 
   validateLogin() {
@@ -26,6 +26,8 @@ export default class LoginController {
 
     if (valid) {
       this.router.render('/recent');
+    } else {
+      document.getElementById('loginError').classList.add('login-error-shown');
     }
   }
 
