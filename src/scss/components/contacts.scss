@@ -3,7 +3,8 @@
 @import "../sprite";
 
 .contacts {
-  padding: 0 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   &-item {
     position: relative;
     border-bottom: 1px solid $gray;

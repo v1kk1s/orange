@@ -9,7 +9,7 @@ export default class ContactsView {
 
   render () {
     this.content = `
-			<div class="contacts">
+			<div class="contacts list-page">
         ${this.contacts.map((contact) => {
           return(`
             <div class="contacts-item ${contact.online ? 'contacts-online' : ''}">
