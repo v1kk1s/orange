@@ -1,10 +1,10 @@
-import GroupModel from '../models/newGroup';
+import ContactsModel from '../models/contacts';
 
 export default class NewGroupView {
   constructor (container) {
     this.container = container;
     this.content = null;
-    this.groupContacts = new GroupModel().contacts;
+    this.contacts = new ContactsModel().contacts;
   }
 
   getItems(item) {
@@ -48,7 +48,7 @@ export default class NewGroupView {
           </div>
 
           <div class="new-group-contacts-list">
-            ${this.groupContacts.map(this.getItems.bind(this)).join('')}
+            ${this.contacts.map(this.getItems.bind(this)).join('')}
           </div>
 
         </div>

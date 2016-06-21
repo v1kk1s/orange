@@ -3,6 +3,7 @@ import Login from '../controllers/LoginController';
 import Recent from '../controllers/RecentController';
 import Contacts from '../controllers/ContactsController';
 import NewGroup from '../controllers/NewGroupController';
+import Groups from '../controllers/GroupsController';
 import Menu from '../controllers/MenuController';
 
 export default class Router {
@@ -39,7 +40,7 @@ export default class Router {
 		this.route('/recent', [Menu, Header, Recent]);
 		this.route('/contacts', [Menu, Header, Contacts]);
 		this.route('/group', [Menu, Header, NewGroup ]);
-		this.route('/groups', [Menu, Header, NewGroup ]);
+		this.route('/groups', [Menu, Header, Groups ]);
 
 		this.go(currentURL);
 	}
