@@ -15,6 +15,13 @@ export default class GroupsView {
 
         <div class="groups list-page">
 
+          <div class="groups-item">
+            <div class="groups-img default">
+              <div class="groups-counter">4</div>
+            </div>
+            <div class="groups-name">Friends</div>
+          </div>
+
         </div>
 			</div>
 		`;
