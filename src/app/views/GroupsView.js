@@ -21,15 +21,13 @@ export default class GroupsView {
   render () {
 
     this.content = `
+      <div class="groups list-page">
 
-      <div>
+        ${this.groups.map(this.getGroups.bind(this)).join('')}
 
-        <div class="groups list-page">
+        <div class="groups-add-new" id="addNewGroup">Add new group</div>
 
-          ${this.groups.map(this.getGroups.bind(this)).join('')}
-
-        </div>
-			</div>
+      </div>
 		`;
 
     this.container.insertAdjacentHTML('beforeend', this.content );

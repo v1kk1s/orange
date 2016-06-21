@@ -48,4 +48,19 @@
     @include position(absolute, 10px 10px null null);
   }
 
+  &-add-new {
+    margin: 40px auto 20px;
+    line-height: 80px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: white;
+    background: $orange;
+    text-align: center;
+    @include size(400px 80px);
+
+    &:hover, &:active {
+      background: shade($orange, 20%);
+    }
+  }
+
 }
