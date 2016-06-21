@@ -17,8 +17,7 @@ export default class NewGroupController {
   }
 
   clearRadio(radioMask) {
-    //radioMask.previousSibling.prop('checked', false);
-    radioMask.style.display = 'none';
+    radioMask.previousElementSibling.checked = false;
   }
 
   render () {

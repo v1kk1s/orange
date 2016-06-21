@@ -94,8 +94,11 @@
     display: block;
   }
 
-  &-added {
+  input[type='radio']:not(:checked) + .new-group-added {
     display: none;
+  }
+
+  &-added {
     margin: auto;
     border-radius: 50%;
     background-color: $green;
