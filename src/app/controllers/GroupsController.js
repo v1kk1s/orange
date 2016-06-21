@@ -6,7 +6,6 @@ export default class GroupsController {
     this.render();
   }
 
-
   render () {
     return this.view.render();
   }

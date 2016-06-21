@@ -23,7 +23,7 @@ export default class ContactsView {
 
                <div class="contacts-group">
                  <div class="contacts-icon ${contact.group ? (`contacts-${contact.group}`) : ''}"></div>
-                 <p class="contacts-item-group">${contact.group}</p>
+                 <p class="contacts-item-group">${contact.group ? contact.group : '' }</p>
                </div>
             </div>
           `)

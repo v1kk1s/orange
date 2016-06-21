@@ -15,7 +15,6 @@ export default class GroupsView {
 
         <div class="groups list-page">
 
-
         </div>
 			</div>
 		`;

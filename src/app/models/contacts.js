@@ -56,42 +56,42 @@ export default class ContactsModel {
         lastSeen: "last seen 8 hours ago",
         icon: 'MaryseO.png',
         online: true,
-        group: 'friend'
+        group: false
       },
       {
         name: "Trish Stratus",
         lastSeen: "last seen 9 hours ago",
         icon: 'TrishS.png',
         online: true,
-        group: 'friend'
+        group: false
       },
       {
         name: "Randy Orton",
         lastSeen: "last seen yesterday at 16:23",
         icon: 'TrishS.png',
         online: true,
-        group: 'friend'
+        group: false
       },
       {
         name: "Edge WWe",
         lastSeen: "last seen yesterday 15:24",
         icon: 'EdgeW.png',
         online: true,
-        group: 'friend'
+        group: false
       },
       {
         name: "Brianna Garsia",
         lastSeen: "last seen yesterday at 14:12",
         icon: 'BriannaG.png',
         online: true,
-        group: 'friend'
+        group: false
       },
       {
         name: "Aj Lee",
         lastSeen: "last seen yeasterday at 13:40",
         icon: 'AjL.png',
         online: true,
-        group: 'friend'
+        group: false
       }
     ];
   }
