@@ -5,7 +5,7 @@ export default class MenuItems {
       {
         title: "Recent",
         iconClass: 'menu-recent',
-        link: 'recent'
+        link: '/recent'
       },
       {
         title: "Groups",
@@ -15,7 +15,7 @@ export default class MenuItems {
       {
         title: "Contacts",
         iconClass: 'menu-contacts',
-        link: 'contacts'
+        link: '/contacts'
       },
       {
         title: "Settings",
