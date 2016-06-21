@@ -23,7 +23,7 @@ export default class NewGroupView {
 
     this.content = `
 
-      <div>
+      <div class="new-group list-page">
         <!--<header class="header">-->
 
           <!--<div class="header-top-wrap">-->
@@ -32,7 +32,7 @@ export default class NewGroupView {
             <!--<div class="header-create header-new-group-header-btns">Create</div>-->
         <!--</header>-->
 
-        <div class="new-group list-page">
+        <form>
 
           <div class="new-group-create">
             <div class="new-group-info-wrap">
@@ -43,7 +43,8 @@ export default class NewGroupView {
             <div class="new-group-instructions">
               <p class="new-group-set-photo">Set Group Photo</p>
               <p class="new-group-add-people">Add people to you group  <span class="new-group-counter">2/100</span></p>
-              <p class="new-group-members">Name of  contact, Name of  contact,</p>
+              <p class="new-group-members"></p>
+              <button class="new-group-submit" type="submit">Create group</button>
             </div>
           </div>
 
@@ -51,7 +52,7 @@ export default class NewGroupView {
             ${this.contacts.map(this.getItems.bind(this)).join('')}
           </div>
 
-        </div>
+        </form>
 			</div>
 		`;
 

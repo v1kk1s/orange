@@ -141,4 +141,19 @@
     font-family: $h-bold;
     letter-spacing: -0.8px;
   }
+
+  &-submit {
+    line-height: 80px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: white;
+    background: $orange;
+    text-align: center;
+    border: none;
+    @include size(250px 80px);
+
+    &:hover, &:active {
+      background: shade($orange, 20%);
+    }
+  }
 }
