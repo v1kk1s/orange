@@ -38,7 +38,8 @@ export default class Router {
 		this.route('/', [Login]);
 		this.route('/recent', [Menu, Header, Recent]);
 		this.route('/contacts', [Menu, Header, Contacts]);
-		this.route('/group', [Menu, NewGroup ]);
+		this.route('/group', [Menu, Header, NewGroup ]);
+		this.route('/groups', [Menu, Header, NewGroup ]);
 
 		this.go(currentURL);
 	}

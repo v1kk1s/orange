@@ -24,15 +24,15 @@ export default class NewGroupView {
     this.content = `
 
       <div>
-        <header class="header">
+        <!--<header class="header">-->
 
-          <div class="header-top-wrap">
-            <div class="header-back header-new-group-header-btns">Back</div>
-            <div class="header-title">New Group</div>
-            <div class="header-create header-new-group-header-btns">Create</div>
-        </header>
+          <!--<div class="header-top-wrap">-->
+            <!--<div class="header-back header-new-group-header-btns">Back</div>-->
+            <!--<div class="header-title">New Group</div>-->
+            <!--<div class="header-create header-new-group-header-btns">Create</div>-->
+        <!--</header>-->
 
-        <div class="new-group">
+        <div class="new-group list-page">
 
           <div class="new-group-create">
             <div class="new-group-info-wrap">

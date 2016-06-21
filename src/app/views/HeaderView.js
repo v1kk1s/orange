@@ -14,7 +14,7 @@ export default class HeaderView {
 						<div class="nav-icon"> <div></div> </div>
 					</div>
 
-					<div class="header-title"> Recent </div>
+					<div class="header-title" id="headerTitle">  </div>
 
 					<a href="#" type="submit" class="header-search-icon" id="header-search-icon"></a>
 				</div>

@@ -8,9 +8,14 @@ export default class MenuItems {
         link: '/recent'
       },
       {
+        title: "New group",
+        iconClass: 'menu-groups',
+        link: '/group'
+      },
+      {
         title: "Groups",
         iconClass: 'menu-groups',
-        link: '#'
+        link: '/groups'
       },
       {
         title: "Contacts",
