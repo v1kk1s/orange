@@ -6,7 +6,7 @@
   padding: 140px 5% 0;
 
   &-item {
-    @include size(100% 200px);
+    @include size(100% 220px);
     @include display(flex);
     @include flex-direction(row);
     @include justify-content(flex-start);
@@ -33,6 +33,7 @@
     color: $dark;
     font-size: 40px;
     word-spacing: 6.4px;
+    text-transform: capitalize;
   }
 
   &-counter {
