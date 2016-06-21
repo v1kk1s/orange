@@ -10,7 +10,7 @@ export default class MenuView {
 
   render () {
     this.content = `
-			<div class="menu">
+			<div class="menu" id="menu">
 
         <div class="menu-avatar-wrap">
           <div class="menu-user-info">
