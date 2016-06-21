@@ -10,7 +10,8 @@ export default class NewGroupView {
   getItems(item) {
     return `
       <div class="new-group-contact">
-        <div class="new-group-membership-indicator ${item.isInGroup ? 'is-member' : ''}"></div>
+        <input type='radio' class="new-group-membership-indicator"/>
+        <div class="new-group-added"></div>
         <div class="new-group-contact-info ${item.online ? 'online' : ''}">
         <img src="public/img/${item.icon}" class='new-group-contact-img' alt="profile icon"/>
         <p class="new-group-contact-name">${item.name}</p>

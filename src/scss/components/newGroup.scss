@@ -84,23 +84,27 @@
   &-membership-indicator {
     margin: auto;
     border-radius: 50%;
-    background-color: white;
-    border: 1px solid $gray2;
+    background-color: white !important;
+    border: 1px solid $gray2 !important;
     @include size(34px);
     @include position(absolute, 0 null 0 null);
-    &.is-member {
-      border: none;
-      background-color: $green2;
-      &:before {
-        display: block;
-        content: '';
-        margin:auto;
-        top: 50%;
-        position: relative;
-        @include transform(translateY(-50%));
-        @include sprite($new-group-check);
-      }
-    }
+  }
+
+  input[type='radio']:checked + .new-group-added {
+    display: block;
+  }
+
+  &-added {
+    display: none;
+    margin: auto;
+    border-radius: 50%;
+    background-color: $green;
+    background-image: url('public/img/sprites/newGroupCheck.png');
+    background-position: 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    @include size(34px);
+    @include position(absolute, 0 null 0 null);
   }
 
   &-contact-info {
