@@ -69,6 +69,11 @@
     font-size: 22px;
     font-weight: 500;
     word-spacing: 6.4px;
+    margin-bottom: 25px;
+
+    &:empty {
+      display: none;
+    }
   }
 
   &-contacts-list {

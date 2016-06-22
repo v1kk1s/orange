@@ -10,7 +10,7 @@ export default class NewGroupView {
   getItems(item) {
     return `
       <div class="new-group-contact">
-        <input type='radio' class="new-group-membership-indicator"/>
+        <input type='radio' class="new-group-membership-indicator" value=${item.name}/>
         <div class="new-group-added"></div>
         <div class="new-group-contact-info ${item.online ? 'online' : ''}">
         <img src="public/img/${item.icon}" class='new-group-contact-img' alt="profile icon"/>
@@ -44,7 +44,7 @@ export default class NewGroupView {
             <div class="new-group-instructions">
               <p class="new-group-set-photo">Set Group Photo</p>
               <p class="new-group-add-people">Add people to you group  <span class="new-group-counter">2/100</span></p>
-              <p class="new-group-members"></p>
+              <p class="new-group-members" id="newGroupMember"></p>
               <button class="new-group-submit" type="submit">Create group</button>
             </div>
           </div>
