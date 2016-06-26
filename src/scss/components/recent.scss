@@ -6,6 +6,7 @@
 
   &-contact-entry-wrap {
     position: relative;
+    @include transition(transform 0.3s ease-in-out, opacity 0.3s ease-in-out);
   }
 
   &-contact {
@@ -24,10 +25,12 @@
       @include transform(translateX(10%));
       @include transition( transform 3s $ease-in-out-quad);
     }
+
     &-logo {
       @include transition(opacity 0.2s $ease-in-out-quad);
       @include size(100px);
     }
+
     &-name {
       color: $dark;
       font-size: 33px;
@@ -35,6 +38,7 @@
       letter-spacing: -0.4px;
       margin-bottom: 11px;
     }
+
     &-last-seen {
       color: $gray3;
       font-size: 21px;
@@ -57,11 +61,13 @@
     @include justify-content(center);
     @include flex-wrap(nowrap);
     @include transition(right 0.3s $ease-in-out-quad);
+
     &-icon {
       @include size(64px 65px);
       background: url("../public/img/delete-contact-icon.png") no-repeat;
       background-position: center center;
     }
+
     &-text {
       color: white;
       font-size: 22px;
@@ -72,16 +78,27 @@
   }
 
   .delete {
+
     .recent {
+
       &-contact-logo {
         opacity: 0;
       }
+
       &-contact-caption {
         @include transform(translateX(-100px));
       }
+
       &-delete-contact {
         right: 0;
       }
     }
+  }
+
+  .deleted {
+    @include transform(translateY(-181px));
+    opacity: 0;
+    z-index: -1;
+    display: none;
   }
 }

@@ -1,25 +1,25 @@
-export default class MenuItems {
+export default class Routes {
 
   constructor() {
-    this.menuItems = [
+    this.routes = [
       {
         title: "Recent",
-        iconClass: 'menu-recent',
         link: '/recent'
       },
       {
         title: "Groups",
-        iconClass: 'menu-groups',
         link: '/groups'
       },
       {
+        title: "New Group",
+        link: '/group'
+      },
+      {
         title: "Contacts",
-        iconClass: 'menu-contacts',
         link: '/contacts'
       },
       {
         title: "Settings",
-        iconClass: 'menu-settings',
         link: '#'
       }
     ];

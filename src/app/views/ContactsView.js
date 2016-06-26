@@ -9,7 +9,7 @@ export default class ContactsView {
 
   render () {
     this.content = `
-			<div class="contacts">
+			<div class="contacts list-page">
         ${this.contacts.map((contact) => {
           return(`
             <div class="contacts-item ${contact.online ? 'contacts-online' : ''}">
@@ -23,7 +23,7 @@ export default class ContactsView {
 
                <div class="contacts-group">
                  <div class="contacts-icon ${contact.group ? (`contacts-${contact.group}`) : ''}"></div>
-                 <p class="contacts-item-group">${contact.group}</p>
+                 <p class="contacts-item-group">${contact.group ? contact.group : '' }</p>
                </div>
             </div>
           `)
@@ -31,7 +31,6 @@ export default class ContactsView {
 			</div>
 		`;
 
-    console.log(this.contacts);
     this.container.insertAdjacentHTML('beforeend', this.content );
   }
 }

@@ -6,7 +6,7 @@
   width: 530px;
   height: 100%;
   background-color: $orange;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 3;
   color: white;
@@ -59,7 +59,7 @@
     line-height: 55px;
     letter-spacing: -1px;
     list-style: none;
-    a {
+    span {
       display: block;
       padding-left: 31%;
       color: white;

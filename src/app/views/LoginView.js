@@ -14,12 +14,15 @@ export default class LoginView {
           <h1>Welcome to orange chat</h1>
 
           <form action="#">
-            <input type="text" class="login-username" placeholder="Username"/>
-            <input type="password" class="login-password" placeholder="Password"/>
+
+            <p id="loginError" class="login-error">Login or password are incorrect</p>
+
+            <input type="text" id="login" class="login-username" placeholder="Username"/>
+            <input type="password" id="password" class="login-password" placeholder="Password"/>
 
             <a href="#" class="login-pswd-forget"> Forgot your password?</a>
 
-            <a href="#" class="login-btn"> <span class="vert-align">Log in</span></a>
+            <a href="#" id="loginSubmit" class="login-btn"> <span class="vert-align">Log in</span></a>
           </form>
         </div>
 			</div>

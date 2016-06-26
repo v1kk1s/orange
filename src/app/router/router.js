@@ -2,30 +2,46 @@ import Header from '../controllers/HeaderController';
 import Login from '../controllers/LoginController';
 import Recent from '../controllers/RecentController';
 import Contacts from '../controllers/ContactsController';
+import NewGroup from '../controllers/NewGroupController';
+import Groups from '../controllers/GroupsController';
 import Menu from '../controllers/MenuController';
 
 export default class Router {
 	constructor (container) {
 		this.container = container;
 		this.content = null;
+		this.routes = [];
+	}
+
+	route (path, content) {
+		this.routes[path] = {content: content};
+	}
+
+	getCurrentRoute() {
+		return location.pathname || '/';
 	}
 
 	run () {
-		this.render();
+		let currentURL = this.getCurrentRoute();
+		this.render(currentURL);
 	}
 
-	render () {
-		// login page
-		//new Login(this.container);
+	go(route) {
+		this.container.innerHTML= '';
+		history.pushState({}, route, route);
 
-		//recent page
-		//new Menu(this.container);
-		//new Header(this.container);
-		//new Recent(this.container);
+		this.routes[route].content.forEach( (el) => {
+			return (new el(this.container));
+		} );
+	}
 
-		//contacts page
-		new Header(this.container);
-		new Menu(this.container);
-		new Contacts(this.container);
+	render (currentURL) {
+		this.route('/', [Login]);
+		this.route('/recent', [Menu, Header, Recent]);
+		this.route('/contacts', [Menu, Header, Contacts]);
+		this.route('/group', [Menu, Header, NewGroup ]);
+		this.route('/groups', [Menu, Header, Groups ]);
+
+		this.go(currentURL);
 	}
 }

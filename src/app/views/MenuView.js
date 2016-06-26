@@ -10,7 +10,7 @@ export default class MenuView {
 
   render () {
     this.content = `
-			<div class="menu">
+			<div class="menu" id="menu">
 
         <div class="menu-avatar-wrap">
           <div class="menu-user-info">
@@ -22,7 +22,7 @@ export default class MenuView {
         <div class="menu-list-wrap">
           <ul>
             ${this.menuItems.map((item) => {
-              return(`<li class="menu-list-item"><a href=${item.link} class=${item.iconClass}>${item.title}</a></li>`)
+              return(`<li class="menu-list-item" data-link=${item.link}><span class=${item.iconClass}>${item.title}</span></li>`)
             }).join('')}
           </ul>
 

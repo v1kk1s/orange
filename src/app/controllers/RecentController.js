@@ -1,5 +1,4 @@
 import View from '../views/RecentView';
-import $ from '../../../node_modules/jquery/dist/jquery.min.js';
 
 export default class RecentController {
   constructor (container) {
@@ -12,27 +11,37 @@ export default class RecentController {
   }
 
   initEvents() {
-    $('.recent-contact-entry-wrap')
-      .on('touchstart', this.startSwipe)
-      .on('touchend', this.endSwipe)
-      .on('touchmove', this.midSwipe);
-    $('.recent-delete-contact').on('click', this.deleteRecent);
+    let recent = document.querySelectorAll('.recent-contact-entry-wrap');
+    let recentDelete = document.querySelectorAll('.recent-contact-entry-wrap');
+
+    recent.forEach((contact) => {
+      contact.addEventListener('touchstart', this.startSwipe);
+      contact.addEventListener('touchend', this.endSwipe);
+      contact.addEventListener('touchmove', this.midSwipe);
+    });
+
+    recentDelete.forEach((del) => {
+      del.addEventListener('click', this.deleteRecent)
+    });
   }
 
   startSwipe(e) {
-    this.startX = e.originalEvent.touches[0].pageX;z
+    this.startX = e.touches[0].pageX;
   }
 
   endSwipe() {
-    this.startX > this.endX ? $(this).addClass('delete') : $(this).removeClass('delete');
+    this.startX > this.endX
+      ? this.classList.add('delete')
+      : this.classList.remove('delete');
   }
 
   midSwipe(e) {
-    this.endX = e.originalEvent.touches[0].pageX;
+    this.endX = e.touches[0].pageX;
   }
 
   deleteRecent () {
-    $(this).parent().slideUp();
+    console.log('deleted');
+    this.classList.add('deleted');
   }
 
   render () {
