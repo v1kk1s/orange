@@ -14,7 +14,6 @@ cookies
 json web tokens for authentication
 
 
-add grayscale & opacity on added person in new group
 counter
 
 //to do
