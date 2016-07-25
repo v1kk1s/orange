@@ -14,9 +14,7 @@ cookies
 json web tokens for authentication
 
 
-counter
-
 //to do
-transfer to chants on contact & group clicks
+transfer to chats on contact & group clicks
 group creation
 search person after 3rd symbol typed into a search box

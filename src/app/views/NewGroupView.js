@@ -38,7 +38,7 @@ export default class NewGroupView {
               <p class="new-group-set-photo">Set Group Photo</p>
               <p class="new-group-add-people">
                 Add people to you group
-                <span class="new-group-counter"> <span id="newGroupCounter"></span>/100</span>
+                <span class="new-group-counter"> <span id="newGroupCounter">0</span>/100</span>
               </p>
               <p class="new-group-members" id="newGroupMember"></p>
               <button class="new-group-submit" type="submit">Create group</button>
