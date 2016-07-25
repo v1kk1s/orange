@@ -1,8 +1,10 @@
 import View from '../views/NewGroupView';
+import Groups from '../models/groups';
 
 export default class NewGroupController {
   constructor (container) {
     this.view = new View(container);
+    this.groups = new Groups().groups;
     this.render();
     this.counter = 0;
 
@@ -11,6 +13,13 @@ export default class NewGroupController {
 
   initEvents() {
     let contacts = document.querySelectorAll('.new-group-contact');
+    let form = document.getElementById('addGroup');
+
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      this.addNewGroup();
+      return false;
+    });
 
     contacts.forEach((contact) => {
       contact.addEventListener('click', this.addPersonToList.bind(this, contact));
@@ -21,6 +30,7 @@ export default class NewGroupController {
     let members = document.getElementById('newGroupMember');
     let contactRadio = contact.getElementsByClassName('new-group-membership-indicator')[0];
     let counterElement = document.getElementById('newGroupCounter');
+    //let contactName = document.getElementById('contactName');
 
     contact.classList.toggle('new-group-contact-added');
 
@@ -35,6 +45,25 @@ export default class NewGroupController {
     }
 
     counterElement.innerHTML = this.counter;
+  }
+
+  addNewGroup() {
+    let name = document.getElementById('groupName').value;
+    let radios = document.querySelectorAll('.new-group-membership-indicator');
+    let members = [];
+
+    radios.forEach((radio) => {
+      if (radio.checked) {
+        members.push(radio.value);
+      }
+    });
+
+    this.groups.push({
+      name,
+      members
+    });
+
+    console.log(this.groups);
   }
 
   render () {

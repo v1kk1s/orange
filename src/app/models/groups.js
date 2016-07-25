@@ -4,11 +4,11 @@ export default class GroupsModel {
     this.groups = [
       {
         name: 'friends',
-        members: ['Chandler', 'Chandler', 'Chandler']
+        members: [4, 3, 1, 5]
       },
       {
         name: 'favourite',
-        members: ['Rachel Green', 'Rachel Green', 'Rachel Green', 'Rachel Green']
+        members: [1, 2, 3, 4, 5]
       }
     ];
   }
