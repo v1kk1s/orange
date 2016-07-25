@@ -84,6 +84,8 @@
     position: relative;
     height: 180px;
     width: 100%;
+    @include transform(translateY(0));
+    @include transition(all 0.3s ease);
   }
 
   &-membership-indicator {
@@ -167,5 +169,10 @@
     &:hover, &:active {
       background: shade($orange, 20%);
     }
+  }
+
+  &-contact-added {
+    opacity: 0.6;
+    @include filter(grayscale(80%));
   }
 }

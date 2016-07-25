@@ -9,28 +9,26 @@ export default class NewGroupController {
   }
 
   initEvents() {
-    let radioMasks = document.querySelectorAll('.new-group-added');
-    let radios = document.querySelectorAll('.new-group-membership-indicator');
+    let contacts = document.querySelectorAll('.new-group-contact');
 
-    radioMasks.forEach((radioMask) => {
-      radioMask.addEventListener('click', this.clearRadio.bind(this, radioMask));
-    });
-
-    radios.forEach((radio) => {
-      radio.addEventListener('click', this.addPersonToList.bind(this, radio));
+    contacts.forEach((contact) => {
+      contact.addEventListener('click', this.addPersonToList.bind(this, contact));
     });
   }
 
-  clearRadio(radioMask) {
+  addPersonToList(contact) {
     let members = document.getElementById('newGroupMember');
-    radioMask.previousElementSibling.checked = false;
-    members.innerHTML = members.innerHTML.replace(radioMask.previousElementSibling.value, '');
-  }
+    let contactRadio = contact.getElementsByClassName('new-group-membership-indicator')[0];
 
-  addPersonToList(radio) {
-    let members = document.getElementById('newGroupMember');
-    //members.innerHTML += (members.innerHTML ? ', ' + radio.value : radio.value);
-    members.innerHTML += radio.value + ' ';
+    contact.classList.toggle('new-group-contact-added');
+
+    if (contactRadio.checked) {
+      contactRadio.checked = false;
+      members.innerHTML = members.innerHTML.replace(contactRadio.value, '');
+    } else {
+      contactRadio.checked = true;
+      members.innerHTML += contactRadio.value + ' ';
+    }
   }
 
   render () {

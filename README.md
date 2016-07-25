@@ -16,7 +16,6 @@ json web tokens for authentication
 
 add grayscale & opacity on added person in new group
 counter
-extend click area when adding a new person to the group
 
 //to do
 transfer to chants on contact & group clicks
