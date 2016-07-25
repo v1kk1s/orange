@@ -58,12 +58,17 @@ export default class NewGroupController {
       }
     });
 
-    this.groups.push({
+    let newGroup = {
       name,
       members
-    });
+    };
 
-    console.log(this.groups);
+    this.pushToFile(newGroup);
+  }
+
+  pushToFile(group) {
+    console.log(group);
+    //let model = new File('./models/groups.js');
   }
 
   render () {
