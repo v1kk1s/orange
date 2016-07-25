@@ -25,13 +25,6 @@ export default class NewGroupView {
     this.content = `
 
       <div class="new-group list-page">
-        <!--<header class="header">-->
-
-          <!--<div class="header-top-wrap">-->
-            <!--<div class="header-back header-new-group-header-btns">Back</div>-->
-            <!--<div class="header-title">New Group</div>-->
-            <!--<div class="header-create header-new-group-header-btns">Create</div>-->
-        <!--</header>-->
 
         <form>
 
@@ -43,7 +36,10 @@ export default class NewGroupView {
 
             <div class="new-group-instructions">
               <p class="new-group-set-photo">Set Group Photo</p>
-              <p class="new-group-add-people">Add people to you group  <span class="new-group-counter">2/100</span></p>
+              <p class="new-group-add-people">
+                Add people to you group
+                <span class="new-group-counter"> <span id="newGroupCounter"></span>/100</span>
+              </p>
               <p class="new-group-members" id="newGroupMember"></p>
               <button class="new-group-submit" type="submit">Create group</button>
             </div>

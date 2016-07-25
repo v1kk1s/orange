@@ -4,33 +4,37 @@ export default class NewGroupController {
   constructor (container) {
     this.view = new View(container);
     this.render();
+    this.counter = 0;
 
     this.initEvents();
   }
 
   initEvents() {
-    let radioMasks = document.querySelectorAll('.new-group-added');
-    let radios = document.querySelectorAll('.new-group-membership-indicator');
+    let contacts = document.querySelectorAll('.new-group-contact');
 
-    radioMasks.forEach((radioMask) => {
-      radioMask.addEventListener('click', this.clearRadio.bind(this, radioMask));
-    });
-
-    radios.forEach((radio) => {
-      radio.addEventListener('click', this.addPersonToList.bind(this, radio));
+    contacts.forEach((contact) => {
+      contact.addEventListener('click', this.addPersonToList.bind(this, contact));
     });
   }
 
-  clearRadio(radioMask) {
+  addPersonToList(contact) {
     let members = document.getElementById('newGroupMember');
-    radioMask.previousElementSibling.checked = false;
-    members.innerHTML = members.innerHTML.replace(radioMask.previousElementSibling.value, '');
-  }
+    let contactRadio = contact.getElementsByClassName('new-group-membership-indicator')[0];
+    let counterElement = document.getElementById('newGroupCounter');
 
-  addPersonToList(radio) {
-    let members = document.getElementById('newGroupMember');
-    //members.innerHTML += (members.innerHTML ? ', ' + radio.value : radio.value);
-    members.innerHTML += radio.value + ' ';
+    contact.classList.toggle('new-group-contact-added');
+
+    if (contactRadio.checked) {
+      contactRadio.checked = false;
+      members.innerHTML = members.innerHTML.replace(contactRadio.value, '');
+      this.counter--;
+    } else {
+      contactRadio.checked = true;
+      members.innerHTML += contactRadio.value + ' ';
+      this.counter++;
+    }
+
+    counterElement.innerHTML = this.counter;
   }
 
   render () {
