@@ -3,6 +3,7 @@ export default class ContactsModel {
   constructor() {
     this.contacts = [
       {
+        id: 1,
         name: "Chandler",
         online: true,
         icon: 'chandler.png',
@@ -10,6 +11,7 @@ export default class ContactsModel {
         lastSeen: "last seen 2 hours ago"
       },
       {
+        id: 2,
         name: "Rachel Green",
         online: false,
         icon: 'rachel.png',
@@ -17,6 +19,7 @@ export default class ContactsModel {
         lastSeen: "last seen 2 hours ago"
       },
       {
+        id: 3,
         name: "Fibi Bufe",
         online: true,
         icon: 'fibi.png',
@@ -24,6 +27,7 @@ export default class ContactsModel {
         lastSeen: "last seen 2 hours ago"
       },
       {
+        id: 4,
         name: "Joey Tribbiani",
         online: true,
         icon: 'joey.png',
@@ -31,6 +35,7 @@ export default class ContactsModel {
         group: 'friend'
       },
       {
+        id: 5,
         name: "Ross Geller",
         online: false,
         icon: 'ross.png',
@@ -38,6 +43,7 @@ export default class ContactsModel {
         group: 'favourite'
       },
       {
+        id: 6,
         name: "Monica",
         online: true,
         icon: 'monica.png',
@@ -45,6 +51,7 @@ export default class ContactsModel {
         group: 'friend'
       },
       {
+        id: 7,
         name: "Anabel Estanza",
         lastSeen: "last seen 2 hours ago",
         icon: 'anabelEstanza.png',
@@ -52,6 +59,7 @@ export default class ContactsModel {
         group: 'friend'
       },
       {
+        id: 8,
         name: "Maryse Ouellet",
         lastSeen: "last seen 8 hours ago",
         icon: 'MaryseO.png',
@@ -59,6 +67,7 @@ export default class ContactsModel {
         group: false
       },
       {
+        id: 9,
         name: "Trish Stratus",
         lastSeen: "last seen 9 hours ago",
         icon: 'TrishS.png',
@@ -66,6 +75,7 @@ export default class ContactsModel {
         group: false
       },
       {
+        id: 10,
         name: "Randy Orton",
         lastSeen: "last seen yesterday at 16:23",
         icon: 'TrishS.png',
@@ -73,6 +83,7 @@ export default class ContactsModel {
         group: false
       },
       {
+        id: 11,
         name: "Edge WWe",
         lastSeen: "last seen yesterday 15:24",
         icon: 'EdgeW.png',
@@ -80,6 +91,7 @@ export default class ContactsModel {
         group: false
       },
       {
+        id: 12,
         name: "Brianna Garsia",
         lastSeen: "last seen yesterday at 14:12",
         icon: 'BriannaG.png',
@@ -87,6 +99,7 @@ export default class ContactsModel {
         group: false
       },
       {
+        id: 13,
         name: "Aj Lee",
         lastSeen: "last seen yeasterday at 13:40",
         icon: 'AjL.png',
