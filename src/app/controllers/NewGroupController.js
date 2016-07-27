@@ -1,10 +1,12 @@
 import View from '../views/NewGroupView';
 import Groups from '../models/groups';
+import Contacts from '../models/contacts';
 
 export default class NewGroupController {
   constructor (container) {
     this.view = new View(container);
     this.groups = new Groups().groups;
+    this.contacts = new Contacts().contacts;
     this.render();
     this.counter = 0;
 
@@ -30,21 +32,29 @@ export default class NewGroupController {
     let members = document.getElementById('newGroupMember');
     let contactRadio = contact.getElementsByClassName('new-group-membership-indicator')[0];
     let counterElement = document.getElementById('newGroupCounter');
-    //let contactName = document.getElementById('contactName');
+    let contactName = this.getContactName(contactRadio);
 
     contact.classList.toggle('new-group-contact-added');
 
     if (contactRadio.checked) {
       contactRadio.checked = false;
-      members.innerHTML = members.innerHTML.replace(contactRadio.value, '');
+      members.innerHTML = members.innerHTML.replace(contactName, '');
       this.counter--;
     } else {
       contactRadio.checked = true;
-      members.innerHTML += contactRadio.value + ' ';
+      members.innerHTML += contactName + ' ';
       this.counter++;
     }
 
     counterElement.innerHTML = this.counter;
+  }
+
+  getContactName(radio) {
+    let name = this.contacts.filter((contact)=>{
+      return contact.id == radio.value;
+    });
+    ;
+    return name[0].name;
   }
 
   addNewGroup() {
@@ -68,7 +78,6 @@ export default class NewGroupController {
 
   pushToFile(group) {
     console.log(group);
-    //let model = new File('./models/groups.js');
   }
 
   render () {
