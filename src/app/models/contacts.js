@@ -101,7 +101,7 @@ export default class ContactsModel {
       {
         id: 13,
         name: "Aj Lee",
-        lastSeen: "last seen yeasterday at 13:40",
+        lastSeen: "last seen yesterday at 13:40",
         icon: 'AjL.png',
         online: true,
         group: false

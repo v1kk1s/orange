@@ -16,6 +16,7 @@ export default class NewGroupController {
   initEvents() {
     let contacts = document.querySelectorAll('.new-group-contact');
     let form = document.getElementById('addGroup');
+    let radios = document.querySelectorAll('.new-group-membership-indicator');
 
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
@@ -26,12 +27,27 @@ export default class NewGroupController {
     contacts.forEach((contact) => {
       contact.addEventListener('click', this.addPersonToList.bind(this, contact));
     });
+
+    radios.forEach((radio) => {
+      radio.addEventListener('click', this.checkRadio.bind(this, radio));
+    });
+  }
+
+  checkRadio(radio) {
+    let contactRadio = radio;
+
+    if (contactRadio.checked) {
+      contactRadio.checked = false;
+    } else {
+      contactRadio.checked = true;
+    }
   }
 
   addPersonToList(contact) {
     let members = document.getElementById('newGroupMember');
     let contactRadio = contact.getElementsByClassName('new-group-membership-indicator')[0];
     let counterElement = document.getElementById('newGroupCounter');
+
     let contactName = this.getContactName(contactRadio);
 
     contact.classList.toggle('new-group-contact-added');
@@ -53,7 +69,7 @@ export default class NewGroupController {
     let name = this.contacts.filter((contact)=>{
       return contact.id == radio.value;
     });
-    ;
+
     return name[0].name;
   }
 
