@@ -4,6 +4,7 @@ import Recent from '../controllers/RecentController';
 import Contacts from '../controllers/ContactsController';
 import NewGroup from '../controllers/NewGroupController';
 import Groups from '../controllers/GroupsController';
+import Conversation from '../controllers/ConversationController';
 import Menu from '../controllers/MenuController';
 
 export default class Router {
@@ -26,22 +27,25 @@ export default class Router {
 		this.render(currentURL);
 	}
 
-	go(route) {
+	go(route, convId) {
+		let stateObj = convId ? {convId: convId} : {};
 		this.container.innerHTML= '';
-		history.pushState({}, route, route);
+
+		history.pushState(stateObj, route, route);
 
 		this.routes[route].content.forEach( (el) => {
 			return (new el(this.container));
 		} );
 	}
 
-	render (currentURL) {
+	render (currentURL, convId) {
 		this.route('/', [Login]);
 		this.route('/recent', [Menu, Header, Recent]);
 		this.route('/contacts', [Menu, Header, Contacts]);
 		this.route('/group', [Menu, Header, NewGroup ]);
 		this.route('/groups', [Menu, Header, Groups ]);
+		this.route('/conversation', [Menu, Header, Conversation ]);
 
-		this.go(currentURL);
+		this.go(currentURL, convId);
 	}
 }

@@ -9,7 +9,7 @@ export default class GroupsView {
 
   getGroups(group) {
     return `
-      <div class="groups-item">
+      <div class="groups-item" id=${group.id}>
         <div class="groups-img default">
           <div class="groups-counter">${group.members.length}</div>
         </div>

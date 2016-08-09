@@ -21,6 +21,10 @@ export default class Routes {
       {
         title: "Settings",
         link: '#'
+      },
+      {
+        title: "Conversation",
+        link: '/conversation'
       }
     ];
   }

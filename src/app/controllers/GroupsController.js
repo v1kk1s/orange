@@ -11,11 +11,20 @@ export default class GroupsController {
   }
 
   initEvents() {
+    let groups = document.querySelectorAll('.groups-item');
+    groups.forEach((group) => {
+      group.addEventListener('click', this.goToConversation.bind(this, group));
+    });
+
     document.getElementById('addNewGroup').addEventListener('click', this.goToNewGroup.bind(this))
   }
 
   goToNewGroup() {
     this.router.render('/group');
+  }
+
+  goToConversation(group) {
+    this.router.render('/conversation', group.id);
   }
 
   render () {
