@@ -30,7 +30,6 @@ export default class RecentController {
   }
 
   goToConversation(contact) {
-    console.log(contact);
     this.router.render('/conversation', contact.id);
   }
 
