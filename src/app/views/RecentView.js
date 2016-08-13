@@ -1,15 +1,15 @@
-import RecentModel from '../models/recent.js';
+import ContactsModel from '../models/contacts.js';
 
 export default class RecentView {
   constructor (container) {
     this.container = container;
     this.content = null;
-    this.recentContacts = new RecentModel().recent;
+    this.contacts = new ContactsModel().contacts;
   }
 
   getItems(item) {
     return `
-      <div class="recent-contact-entry-wrap">
+      <div class="recent-contact-entry-wrap" id=${item.id}>
         <div class="recent-contact">
 
           <div class="recent-contact-logo">
@@ -33,7 +33,7 @@ export default class RecentView {
   render () {
     this.content = `
 			<div class="recent list-page">
-        ${this.recentContacts.map(this.getItems.bind(this)).join('')}
+        ${this.contacts.map(this.getItems.bind(this)).join('')}
 			</div>
 		`;
 

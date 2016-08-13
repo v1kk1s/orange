@@ -7,7 +7,10 @@ export default class ConversationView {
 
   render () {
     this.content = `
-			<div class="convers">
+			<div class="convers list-page">
+
+			<div class="convers-msg convers-me"></div>
+			<div class="convers-msg convers-other"></div>
 
 
 			</div>

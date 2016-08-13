@@ -1,0 +1,23 @@
+@import "bourbon";
+@import "../variables.scss";
+@import "../sprite";
+
+.convers {
+
+  &-msg {
+    width: 350px;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+  }
+
+  &-my {
+    background-color: $orange;
+    float: right;
+  }
+
+  &-other {
+    background-color: #6aa2db;
+    float: left;
+  }
+}
