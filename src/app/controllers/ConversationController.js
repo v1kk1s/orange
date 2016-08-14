@@ -1,12 +1,14 @@
 import View from '../views/ConversationView.js';
 import MessagesModel from '../models/messages';
 import ContactsModel from '../models/contacts';
+import GroupsModel from '../models/groups';
 
 export default class ConversationController {
   constructor (container) {
     this.view = new View(container);
     this.allMessages = new MessagesModel().messages;
     this.contacts = new ContactsModel().contacts;
+    this.groups = new GroupsModel().groups;
     this.convId = history.state.convId;
     this.messages = this.getMessages();
     this.conversationName = this.getConversationName();
@@ -29,9 +31,15 @@ export default class ConversationController {
   }
 
   getConversationName() {
-     return this.contacts.filter((contact) => {
+     let contactName =  this.contacts.filter((contact) => {
       return contact.id == this.convId;
-    })[0].name;
+    });
+
+    let groupName =  this.groups.filter((group) => {
+      return group.id == this.convId;
+    });
+
+    return contactName.length ? contactName[0].name : groupName[0].name;
   }
 
 
