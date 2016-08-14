@@ -12,7 +12,7 @@ export default class ContactsView {
 			<div class="contacts list-page">
         ${this.contacts.map((contact) => {
           return(`
-            <div class="contacts-item ${contact.online ? 'contacts-online' : ''}">
+            <div class="contacts-item ${contact.online ? 'contacts-online' : ''}" id=${contact.id}>
                <div class="contacts-info">
                   <img
                  class="contacts-item-img"
