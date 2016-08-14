@@ -1,18 +1,21 @@
 import View from '../views/ConversationView.js';
 import MessagesModel from '../models/messages';
+import ContactsModel from '../models/contacts';
 
 export default class ConversationController {
   constructor (container) {
     this.view = new View(container);
     this.allMessages = new MessagesModel().messages;
+    this.contacts = new ContactsModel().contacts;
     this.convId = history.state.convId;
     this.messages = this.getMessages();
+    this.conversationName = this.getConversationName();
     this.render();
     this.initEvents();
   }
 
   initEvents() {
-    let convId = history.state.convId;
+    document.getElementById('headerTitle').innerHTML = this.conversationName;
   }
 
   getMessages() {
@@ -23,6 +26,12 @@ export default class ConversationController {
     return allMsgsInConv.sort((a, b) => {
       return a.time - b.time;
     });
+  }
+
+  getConversationName() {
+     return this.contacts.filter((contact) => {
+      return contact.id == this.convId;
+    })[0].name;
   }
 
 

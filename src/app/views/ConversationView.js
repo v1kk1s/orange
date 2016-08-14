@@ -15,8 +15,6 @@ export default class ConversationView {
 
 
   render (messages) {
-
-    console.log(messages);
     this.content =  messages.length ? `
 			<div class="convers list-page">
         ${messages.map((msg) => {
