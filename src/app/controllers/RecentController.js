@@ -1,10 +1,12 @@
 import View from '../views/RecentView';
 import Router from '../router/router';
+import Singleton from './Singleton.js';
 
 export default class RecentController {
   constructor (container) {
     this.view = new View(container);
     this.router = new Router(document.getElementById('app'));
+    this.singleton = Singleton.instance;
     this.render();
 
     this.startX = null;
@@ -27,6 +29,8 @@ export default class RecentController {
     recentDelete.forEach((del) => {
       del.addEventListener('click', this.deleteRecent)
     });
+
+    console.log(this.singleton.data);
   }
 
   goToConversation(contact) {

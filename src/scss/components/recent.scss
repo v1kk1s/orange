@@ -23,7 +23,7 @@
     &-caption {
       margin-top: 7px;
       @include transform(translateX(10%));
-      @include transition( transform 3s $ease-in-out-quad);
+      @include transition( transform 0.3s $ease-in-out-quad);
     }
 
     &-logo {
