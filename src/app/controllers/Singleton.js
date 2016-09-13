@@ -1,17 +1,19 @@
-export default class Singleton  {
+class Singleton  {
 
   constructor() {
+
+    if (!Singleton.instance) {
       this.data = 'Hello from singleton ;)';
-  }
+      this.time = new Date().toLocaleString();
 
-  static get instance() {
-
-    if(!this.singleton) {
-      this.singleton = new Singleton();
+      Singleton.instance = this;
     }
-    return this.singleton;
 
+    console.log('creation time is', Singleton.instance.time);
+
+    return Singleton.instance;
   }
 
 }
+export default Singleton;
 

@@ -2,6 +2,7 @@ import View from '../views/ConversationView.js';
 import MessagesModel from '../models/messages';
 import ContactsModel from '../models/contacts';
 import GroupsModel from '../models/groups';
+import Singleton from './Singleton.js';
 
 export default class ConversationController {
   constructor (container) {
@@ -12,6 +13,7 @@ export default class ConversationController {
     this.convId = history.state.convId;
     this.messages = this.getMessages();
     this.conversationName = this.getConversationName();
+    this.singleton = new Singleton();
     this.render();
     this.initEvents();
   }

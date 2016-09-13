@@ -6,7 +6,7 @@ export default class RecentController {
   constructor (container) {
     this.view = new View(container);
     this.router = new Router(document.getElementById('app'));
-    this.singleton = Singleton.instance;
+    this.singleton = new Singleton();
     this.render();
 
     this.startX = null;
@@ -29,8 +29,6 @@ export default class RecentController {
     recentDelete.forEach((del) => {
       del.addEventListener('click', this.deleteRecent)
     });
-
-    console.log(this.singleton.data);
   }
 
   goToConversation(contact) {
